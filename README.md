@@ -30,11 +30,11 @@ Kibana:
 3. Download the Elasticsearch, Logstash and Kibana generic Linux distrubtions and extract to the root of the repository
 4. Link the directories to the extracted generic Liux archives:
 
-```$ ln -s elasticsearch-7.9.3 elasticsearch```
+   ```$ ln -s elasticsearch-7.9.3 elasticsearch```
 
-```$ ln -s logstash-7.9.3 logstash```
+   ```$ ln -s logstash-7.9.3 logstash```
 
-```$ ln -s kibana-7.9.3-linux-x86_64 kibana```
+   ```$ ln -s kibana-7.9.3-linux-x86_64 kibana```
 
 5. If you want to use NFS:
        
