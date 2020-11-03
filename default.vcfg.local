@@ -1,0 +1,37 @@
+[[program]]
+  binary = "/elasticsearch/bin/elasticsearch"
+  env = ["ES_PATH_CONF=/configs/elasticsearch/config","ES_HOME=/elasticsearch","KIBANA_HOME=/kibana","LOGSTASH_HOME=/logstash"]
+  privilege = "superuser"
+  stderr = "/dev/vtty"
+  stdout = "/dev/vtty"
+
+[[program]]
+  binary = "/logstash/bin/logstash"
+  args = "--path.config /configs/logstash/config/*.conf --path.settings /configs/logstash/config/"
+  env = ["JAVA_HOME=/elasticsearch/jdk","ES_HOME=/elasticsearch","KIBANA_HOME=/kibana","LOGSTASH_HOME=/logstash"]
+  privilege = "superuser"
+  stderr = "/dev/vtty"
+  stdout = "/dev/vtty"
+  bootstrap = ["SLEEP 10000"]
+
+[[program]]
+  binary = "/kibana/bin/kibana"
+  args = "-c /configs/kibana/config/kibana.yml"
+  env = ["ES_HOME=/elasticsearch","KIBANA_HOME=/kibana","LOGSTASH_HOME=/logstash"]
+  privilege = "superuser"
+  stderr = "/dev/vtty"
+  stdout = "/dev/vtty"
+  bootstrap = ["SLEEP 20000"]
+
+[[network]]
+  ip = "dhcp"
+  tcp = ["5601", "9200", "9300", "9600", "10100"]
+
+[system]
+  max-fds = 65535
+  hostname = "vorteil-elk"
+
+[vm]
+  cpus = 1
+  ram = "4 GiB"
+  disk-size = "+512 MiB"
