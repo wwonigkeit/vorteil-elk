@@ -12,7 +12,6 @@
   privilege = "superuser"
   stderr = "/dev/vtty"
   stdout = "/dev/vtty"
-  bootstrap = ["SLEEP 10000"]
 
 [[program]]
   binary = "/kibana/bin/kibana"
@@ -21,7 +20,6 @@
   privilege = "superuser"
   stderr = "/dev/vtty"
   stdout = "/dev/vtty"
-  bootstrap = ["SLEEP 20000"]
 
 [[network]]
   ip = "dhcp"
