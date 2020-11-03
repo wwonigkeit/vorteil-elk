@@ -27,8 +27,20 @@ Kibana:
 
 1. Download and install the latest [Vorteil open source toolkit](https://github.com/vorteil/vorteil)
 2. Clone the repo to an appropriate directory on your local machine
-3. Run the machine using `vorteil run <cloned-directory>`
-4. Get the k3s.yaml file to configure kubectl connections `curl localhost:8080 -o k3s.yaml`
-5. Verify access using `./kubectl --kubeconfig k3s.yaml get pods --namespace=kube-system`
+3. Download the Elasticsearch, Logstash and Kibana generic Linux distrubtions and extract to the root of the repository
+4. Link the directories to the extracted generic Liux archives:
+
+```$ ln -s elasticsearch-7.9.3 elasticsearch```
+```$ ln -s logstash-7.9.3 logstash```
+```$ ln -s kibana-7.9.3-linux-x86_64 kibana```
+
+5. If you want to use NFS:
+       - map the correct NFS shares (IP address & mount points) in the default.vcfg file
+       - copy the configuration files in /example_configs/* to the NFS share
+   or, if you only want to use local disk:
+       - remove the NFS shares in the default.vcfg file
+       - copy the configuration files in /example_configs/* to the /configs/* directory (or customise your own)
+       
+6. Run the machine using `vorteil run <cloned-directory>`
 
 If you have any questions just ask!
