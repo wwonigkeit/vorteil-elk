@@ -27,7 +27,6 @@
   privilege = "superuser"
   stderr = "/dev/vtty"
   stdout = "/dev/vtty"
-  bootstrap = ["SLEEP 10000"]
 
 [[nfs]]
   mount = "/configs/logstash/config"
@@ -51,7 +50,6 @@
   privilege = "superuser"
   stderr = "/dev/vtty"
   stdout = "/dev/vtty"
-  bootstrap = ["SLEEP 20000"]
 
 [[nfs]]
   mount = "/configs/kibana/config"
