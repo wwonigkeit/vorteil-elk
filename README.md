@@ -36,15 +36,15 @@ Kibana:
 
 5. If you want to use NFS:
        
-       - map the correct NFS shares (IP address & mount points) in the default.vcfg.nfs and rename to default.vcfg
+   - map the correct NFS shares (IP address & mount points) in the default.vcfg.nfs and rename to default.vcfg
        
-       - copy the configuration files in /example_configs/* to the NFS share
+   - copy the configuration files in /example_configs/* to the NFS share
    
    or, if you only want to use local disk:
        
-       - rename default.vcfg.local to default.vcfg file
+   - rename default.vcfg.local to default.vcfg file
        
-       - copy the configuration files in /example_configs/* to the /configs/* directory (or customise your own)
+   - copy the configuration files in /example_configs/* to the /configs/* directory (or customise your own)
        
 6. Run the machine using `vorteil run <cloned-directory>`
 
